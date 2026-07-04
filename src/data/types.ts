@@ -8,8 +8,19 @@ export interface RuleSection {
   steps?: string[]
 }
 
+/** A small visual card shown in a setup card group. */
+export interface SetupCard {
+  /** Short text on the card face, e.g. "L" or "F". */
+  label: string
+  tone?: 'good' | 'bad' | 'neutral'
+  /** Renders as a standout card (dark face), e.g. Hitler's role card. */
+  emphasis?: boolean
+}
+
 /** Setup details for a specific player count. */
 export interface PlayerConfig {
+  /** Optional visual card groups rendered above the items, e.g. role cards. */
+  cardGroups?: { title: string; cards: SetupCard[] }[]
   /** e.g. "1 standard deck + 2 jokers" */
   items: { label: string; value: string }[]
   notes?: string[]

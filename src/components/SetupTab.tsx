@@ -27,6 +27,26 @@ export default function SetupTab({ game }: { game: Game }) {
         </div>
       </div>
 
+      {config.cardGroups && (
+        <div className="setup-card-groups">
+          {config.cardGroups.map((group) => (
+            <div key={group.title} className="setup-card-group">
+              <div className="setup-cards">
+                {group.cards.map((card, i) => (
+                  <span
+                    key={i}
+                    className={`setup-card tone-${card.tone ?? 'neutral'}${card.emphasis ? ' emphasis' : ''}`}
+                  >
+                    {card.label}
+                  </span>
+                ))}
+              </div>
+              <span className="setup-card-group-title">{group.title}</span>
+            </div>
+          ))}
+        </div>
+      )}
+
       <dl className="config-items">
         {config.items.map((item) => (
           <div key={item.label} className="config-item">

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { Game } from '../data/types'
 import RulesTab from './RulesTab'
 import SetupTab from './SetupTab'
@@ -9,6 +9,14 @@ type Tab = (typeof TABS)[number]
 
 export default function GamePage({ game }: { game: Game }) {
   const [tab, setTab] = useState<Tab>('Rules')
+
+  // Themes are CSS blocks keyed off this attribute (see App.css).
+  useEffect(() => {
+    document.documentElement.dataset.game = game.id
+    return () => {
+      delete document.documentElement.dataset.game
+    }
+  }, [game.id])
 
   return (
     <div className="game-page">
