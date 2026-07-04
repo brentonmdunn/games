@@ -452,3 +452,104 @@
   font-size: 0.78rem;
   letter-spacing: 0.04em;
 }
+
+/* ---------- Theme: Cambio ----------
+   Card-table felt green, playing-card cream and suit red, gold trim,
+   and a classic serif for headings. */
+
+:root[data-game='cambio'] {
+  --bg: #14523a;
+  --surface: #1a6146;
+  --surface-2: #217355;
+  --border: #2e8264;
+  --text: #f3efdf;
+  --text-dim: #b9d3c5;
+  --accent: #d9b451;
+  --good: #e9c46a;
+  --bad: #d64545;
+}
+
+[data-game='cambio'] .game-header h1,
+[data-game='cambio'] .rule-section h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+[data-game='cambio'] .game-header h1 {
+  font-style: italic;
+  color: var(--accent);
+}
+
+[data-game='cambio'] .game-header::after {
+  content: '♠ ♥ ♣ ♦';
+  display: block;
+  margin-top: 6px;
+  color: var(--accent);
+  font-size: 0.9rem;
+  letter-spacing: 0.4em;
+}
+
+[data-game='cambio'] .cheat-group h2 {
+  color: var(--accent);
+}
+
+[data-game='cambio'] .tabs button {
+  border-color: var(--accent);
+  color: var(--text);
+  background: transparent;
+}
+
+[data-game='cambio'] .tabs button.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #14351f;
+}
+
+[data-game='cambio'] .config-item,
+[data-game='cambio'] .cheat-entry {
+  background: #f7f3e6;
+  border: 1px solid #d8cfae;
+  border-left-width: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+}
+
+[data-game='cambio'] .cheat-entry {
+  border-left-color: #9a9c94;
+}
+
+[data-game='cambio'] .cheat-entry.tone-good {
+  border-left-color: #b8860b;
+}
+
+[data-game='cambio'] .cheat-entry.tone-bad {
+  border-left-color: #c0392b;
+}
+
+[data-game='cambio'] .config-item dd,
+[data-game='cambio'] .cheat-label {
+  color: #1e1c14;
+}
+
+[data-game='cambio'] .config-item dt {
+  color: #8a7a45;
+}
+
+[data-game='cambio'] .cheat-effect,
+[data-game='cambio'] .cheat-entry .cheat-effect {
+  color: #4d4a3c;
+}
+
+[data-game='cambio'] .player-picker-buttons button {
+  border-color: var(--accent);
+  background: transparent;
+}
+
+[data-game='cambio'] .player-picker-buttons button.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #14351f;
+}
+
+[data-game='cambio'] .player-picker-label {
+  color: var(--accent);
+}
+
