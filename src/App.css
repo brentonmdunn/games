@@ -267,3 +267,111 @@
   text-align: center;
   padding-top: 40px;
 }
+
+/* ---------- Theme: Secret Hitler ----------
+   Cream propaganda-poster paper, fascist orange-red, liberal steel blue,
+   and heavy uppercase oblique type (Jost ≈ the game's Futura). */
+
+:root[data-game='secret-hitler'] {
+  --bg: #efe5cd;
+  --surface: #f8f0dd;
+  --surface-2: #e9dcbc;
+  --border: #cbb98f;
+  --text: #21201c;
+  --text-dim: #6f6753;
+  --accent: #d9432f;
+  --good: #5e8ca7;
+  --bad: #d9432f;
+
+  color-scheme: light;
+  font-family: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+}
+
+[data-game='secret-hitler'] .game-header h1 {
+  font-style: italic;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  color: var(--accent);
+}
+
+[data-game='secret-hitler'] .game-header::after {
+  content: '';
+  display: block;
+  width: 64px;
+  height: 5px;
+  margin-top: 8px;
+  background: var(--text);
+}
+
+[data-game='secret-hitler'] .rule-section h2,
+[data-game='secret-hitler'] .cheat-group h2 {
+  font-style: italic;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+[data-game='secret-hitler'] .tabs {
+  background: var(--bg);
+}
+
+[data-game='secret-hitler'] .tabs button {
+  text-transform: uppercase;
+  font-weight: 500;
+  border: 2px solid var(--text);
+  color: var(--text);
+  border-radius: 6px;
+}
+
+[data-game='secret-hitler'] .tabs button.active {
+  background: var(--accent);
+  border-color: var(--text);
+  color: var(--surface);
+  font-style: italic;
+  font-weight: 700;
+}
+
+[data-game='secret-hitler'] .config-item,
+[data-game='secret-hitler'] .cheat-entry {
+  border: 2px solid var(--text);
+  border-radius: 6px;
+  box-shadow: 3px 3px 0 rgba(33, 32, 28, 0.25);
+}
+
+[data-game='secret-hitler'] .cheat-entry {
+  border-left-width: 8px;
+  border-left-color: var(--text);
+}
+
+[data-game='secret-hitler'] .cheat-entry.tone-good {
+  border-left-color: var(--good);
+}
+
+[data-game='secret-hitler'] .cheat-entry.tone-bad {
+  border-left-color: var(--bad);
+}
+
+[data-game='secret-hitler'] .cheat-label {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+[data-game='secret-hitler'] .player-picker-buttons button {
+  border: 2px solid var(--text);
+  border-radius: 6px;
+  color: var(--text);
+}
+
+[data-game='secret-hitler'] .player-picker-buttons button.active {
+  background: var(--accent);
+  border-color: var(--text);
+  color: var(--surface);
+}
+
+[data-game='secret-hitler'] .player-picker-label,
+[data-game='secret-hitler'] .config-item dt {
+  font-weight: 600;
+  color: var(--accent);
+}
