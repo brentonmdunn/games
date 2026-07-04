@@ -1,0 +1,269 @@
+/* ---------- Home / game list ---------- */
+
+.home-header {
+  margin: 8px 0 24px;
+}
+
+.home-header h1 {
+  margin: 0;
+  font-size: 1.9rem;
+}
+
+.home-header p {
+  margin: 4px 0 0;
+  color: var(--text-dim);
+}
+
+.game-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.game-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  margin-bottom: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  color: var(--text);
+}
+
+.game-card:active {
+  background: var(--surface-2);
+}
+
+.game-icon {
+  font-size: 2rem;
+}
+
+.game-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.game-card-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.game-card-tagline {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.game-card-meta {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+.game-card-chevron {
+  color: var(--text-dim);
+  font-size: 1.5rem;
+}
+
+/* ---------- Game page header ---------- */
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.game-header h1 {
+  margin: 0;
+  font-size: 1.7rem;
+}
+
+.game-meta {
+  margin: 4px 0 0;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+/* ---------- Tabs ---------- */
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin: 20px 0;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  padding: 8px 0;
+  z-index: 1;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 10px 4px;
+  background: var(--surface);
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.tabs button.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ---------- Rules ---------- */
+
+.rule-section {
+  margin-bottom: 24px;
+}
+
+.rule-section h2 {
+  font-size: 1.15rem;
+  margin: 0 0 8px;
+  color: var(--accent);
+}
+
+.rule-section p {
+  margin: 0 0 8px;
+}
+
+.rule-section ul,
+.rule-section ol {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.rule-section li {
+  margin-bottom: 6px;
+}
+
+/* ---------- Setup ---------- */
+
+.player-picker {
+  margin-bottom: 20px;
+}
+
+.player-picker-label {
+  display: block;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.player-picker-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.player-picker-buttons button {
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1.05rem;
+  cursor: pointer;
+}
+
+.player-picker-buttons button.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  font-weight: 700;
+}
+
+.config-items {
+  margin: 0;
+}
+
+.config-item {
+  padding: 12px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.config-item dt {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.config-item dd {
+  margin: 2px 0 0;
+  font-weight: 500;
+}
+
+.config-notes p {
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  margin: 10px 0 0;
+}
+
+/* ---------- Cheat sheet ---------- */
+
+.cheat-group {
+  margin-bottom: 22px;
+}
+
+.cheat-group h2 {
+  font-size: 1rem;
+  margin: 0 0 10px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cheat-entries {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cheat-entry {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left-width: 4px;
+  border-radius: 10px;
+}
+
+.cheat-entry.tone-good {
+  border-left-color: var(--good);
+}
+
+.cheat-entry.tone-bad {
+  border-left-color: var(--bad);
+}
+
+.cheat-label {
+  font-weight: 700;
+  white-space: nowrap;
+  min-width: 72px;
+}
+
+.cheat-effect {
+  color: var(--text-dim);
+}
+
+/* ---------- Misc ---------- */
+
+.not-found {
+  text-align: center;
+  padding-top: 40px;
+}
