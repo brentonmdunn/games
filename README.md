@@ -3,7 +3,7 @@
 A mobile-first reference site for game night. Pick a game to see its rules,
 player-count-specific setup, and a quick cheat sheet.
 
-**Games so far:** Cambio
+**Games so far:** Cambio, Secret Hitler
 
 ## Development
 
