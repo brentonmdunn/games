@@ -553,3 +553,64 @@
   color: var(--accent);
 }
 
+/* ---------- Theme: One Night Ultimate Werewolf ----------
+   Midnight-blue night sky, full-moon yellow, and a heavy slab display
+   face for headings. */
+
+:root[data-game='one-night-werewolf'] {
+  --bg: #0e1220;
+  --surface: #181f33;
+  --surface-2: #222c48;
+  --border: #2e3a5c;
+  --text: #e9ebf5;
+  --text-dim: #9aa5c4;
+  --accent: #f0b429;
+  --good: #6fae7c;
+  --bad: #d64545;
+}
+
+[data-game='one-night-werewolf'] .game-header h1,
+[data-game='one-night-werewolf'] .rule-section h2 {
+  font-family: 'Alfa Slab One', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+[data-game='one-night-werewolf'] .game-header h1 {
+  color: var(--accent);
+  text-shadow: 0 0 24px rgba(240, 180, 41, 0.35);
+}
+
+[data-game='one-night-werewolf'] .rule-section h2 {
+  font-size: 1.05rem;
+}
+
+[data-game='one-night-werewolf'] .game-header::after {
+  content: '';
+  display: block;
+  width: 64px;
+  height: 3px;
+  margin-top: 8px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+[data-game='one-night-werewolf'] .tabs button.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #241a04;
+}
+
+[data-game='one-night-werewolf'] .player-picker-buttons button.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #241a04;
+}
+
+[data-game='one-night-werewolf'] .cheat-label {
+  color: var(--accent);
+}
+
+[data-game='one-night-werewolf'] .config-item,
+[data-game='one-night-werewolf'] .cheat-entry {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
