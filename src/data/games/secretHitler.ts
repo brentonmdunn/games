@@ -130,9 +130,27 @@ const secretHitler: Game = {
     const hitlerKnows = players <= 6
     const board = boardForPlayers(players)
     return {
+      cardGroups: [
+        {
+          title: `${liberals} Liberal${liberals > 1 ? 's' : ''}`,
+          cards: Array.from({ length: liberals }, () => ({
+            label: 'L',
+            tone: 'good' as const,
+          })),
+        },
+        {
+          title: `${fascists} Fascist${fascists > 1 ? 's' : ''}`,
+          cards: Array.from({ length: fascists }, () => ({
+            label: 'F',
+            tone: 'bad' as const,
+          })),
+        },
+        {
+          title: 'Hitler',
+          cards: [{ label: 'H', tone: 'bad' as const, emphasis: true }],
+        },
+      ],
       items: [
-        { label: 'Liberals', value: `${liberals}` },
-        { label: 'Fascists', value: `${fascists} + Hitler` },
         {
           label: 'Hitler knows the fascists?',
           value: hitlerKnows

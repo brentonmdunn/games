@@ -182,6 +182,61 @@
   font-weight: 700;
 }
 
+.setup-card-groups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  margin-bottom: 20px;
+}
+
+.setup-card-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.setup-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.setup-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  aspect-ratio: 5 / 7;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+.setup-card.tone-good {
+  background: var(--good);
+  border-color: var(--good);
+  color: #fff;
+}
+
+.setup-card.tone-bad {
+  background: var(--bad);
+  border-color: var(--bad);
+  color: #fff;
+}
+
+.setup-card.emphasis {
+  background: #171512;
+  border-color: #171512;
+  color: #fff;
+}
+
+.setup-card-group-title {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
 .config-items {
   margin: 0;
 }
@@ -374,4 +429,18 @@
 [data-game='secret-hitler'] .config-item dt {
   font-weight: 600;
   color: var(--accent);
+}
+
+[data-game='secret-hitler'] .setup-card {
+  border: 2px solid var(--text);
+  border-radius: 4px;
+  box-shadow: 2px 2px 0 rgba(33, 32, 28, 0.25);
+  font-style: italic;
+}
+
+[data-game='secret-hitler'] .setup-card-group-title {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
 }
