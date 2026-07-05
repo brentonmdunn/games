@@ -38,42 +38,42 @@ const cambio: Game = {
     {
       title: 'Power Cards',
       paragraphs: [
-        'Powers only trigger when you draw the card from the deck and discard it directly. Cards discarded from your grid via a swap or stick do not trigger powers.',
+        'Powers only trigger when you draw the card from the deck and discard it directly. Cards discarded from your grid via a swap or stack do not trigger powers.',
       ],
       bullets: [
         '7 or 8 — Peek at one of your own cards.',
         '9 or 10 — Peek at one card of another player.',
         'Jack or Queen — Blind swap: exchange any two cards between any players (including your own) without looking at them.',
-        'Black King — Peek at any one card on the table, then you may blind swap any two cards.',
+        'Black King — Look at one of your opponent\'s cards, then decide whether to swap with one of your own cards.',
       ],
     },
     {
-      title: 'Sticking (Slapping)',
+      title: 'Stacking',
       paragraphs: [
-        'Whenever a card lands on the discard pile, anyone — in or out of turn — may "stick" a card they believe matches its rank.',
+        'Whenever a card lands on the discard pile, anyone — in or out of turn — may "stack" a card they believe matches its rank.',
       ],
       bullets: [
-        'Stick your own card: if it matches the rank, it stays on the pile and you now have one fewer card. If you\'re wrong, take it back plus one penalty card from the deck.',
-        'Stick someone else\'s card: if it matches, it goes on the pile and you give them one of your own cards (their pile shrinks by zero, yours by one — you choose which card to give without looking). If you\'re wrong, you draw a penalty card.',
-        'Only the first stick counts — fastest hand wins.',
+        'Stack your own card: if it matches the rank, it stays on the pile and you now have one fewer card. If you\'re wrong, take it back plus one penalty card from the deck.',
+        'Stack someone else\'s card: if it matches, it goes on the pile and you give them one of your own cards (their pile shrinks by zero, yours by one — you choose which card to give without looking). If you\'re wrong, you draw a penalty card.',
+        'Only the first stack counts — fastest hand wins.',
       ],
     },
     {
       title: 'Calling Cambio',
       paragraphs: [
-        'If you think you have the lowest total, call "Cambio" at the start of your turn instead of drawing. Every other player then gets exactly one more turn. Your cards are locked — no one may swap with or stick your cards after you call.',
+        'If you think you have the lowest total, call "Cambio" at the start of your turn instead of drawing. Every other player then gets exactly one more turn. Your cards are locked — no one may swap with or stack your cards after you call.',
         'Then everyone reveals. If the caller has the strictly lowest total, they win. If anyone ties or beats the caller, the caller loses and that player wins.',
       ],
     },
     {
       title: 'Card Values',
       bullets: [
-        'Joker = 0',
-        'Ace = 1',
         '2–10 = face value',
-        'Jack = 11, Queen = 12',
-        'Black King = 13',
+        'Jack = 10, Queen = 10',
+        'Black King = 30 (the worst card in the game)',
         'Red King = −1 (the best card in the game)',
+        'Ace = 1',
+        'Joker = 0',
       ],
     },
   ],
@@ -94,13 +94,13 @@ const cambio: Game = {
           label: 'Table space',
           value:
             players >= 5
-              ? 'Use a big table — everyone must be able to reach the discard pile to stick'
+              ? 'Use a big table — everyone must be able to reach the discard pile to stack'
               : 'Any table works',
         },
       ],
       notes: [
         ...(twoDecks
-          ? ['With two decks, duplicate cards are in play — sticking gets wild.']
+          ? ['With two decks, duplicate cards are in play — stacking gets wild.']
           : []),
         ...(players === 2
           ? [
@@ -116,13 +116,13 @@ const cambio: Game = {
     {
       title: 'Card Values',
       entries: [
-        { label: 'Joker', effect: '0', tone: 'good' },
-        { label: 'Red K', effect: '−1', tone: 'good' },
-        { label: 'A', effect: '1', tone: 'good' },
         { label: '2–10', effect: 'Face value', tone: 'neutral' },
-        { label: 'J', effect: '11', tone: 'bad' },
-        { label: 'Q', effect: '12', tone: 'bad' },
-        { label: 'Black K', effect: '13', tone: 'bad' },
+        { label: 'J', effect: '10', tone: 'bad' },
+        { label: 'Q', effect: '10', tone: 'bad' },
+        { label: 'Black K ♣ ♠', effect: '30', tone: 'bad' },
+        { label: 'Red K ♥ ♦', effect: '−1', tone: 'good' },
+        { label: 'A', effect: '1', tone: 'good' },
+        { label: 'Joker', effect: '0', tone: 'good' },
       ],
     },
     {
@@ -131,11 +131,11 @@ const cambio: Game = {
         { label: '7 / 8', effect: 'Peek at one of your own cards' },
         { label: '9 / 10', effect: "Peek at one opponent's card" },
         { label: 'J / Q', effect: 'Blind swap any two cards' },
-        { label: 'Black K', effect: 'Peek any card, then may blind swap two' },
+        { label: 'Black K', effect: 'Look at one of your opponent\'s cards, then decide whether to swap with one of your own cards.' },
       ],
     },
     {
-      title: 'Sticking',
+      title: 'Stacking',
       entries: [
         { label: 'Match own', effect: 'Card stays discarded — one fewer card', tone: 'good' },
         { label: 'Match theirs', effect: 'Discard it + give them one of yours', tone: 'good' },
