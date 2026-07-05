@@ -614,3 +614,112 @@
 [data-game='one-night-werewolf'] .cheat-entry {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
+
+/* ---------- Theme: Nertz ----------
+   Bright game-room white, hot Nertz-deck red, and heavy italic type
+   leaning forward like everything's moving too fast. */
+
+:root[data-game='nertz'] {
+  --bg: #f4f5f8;
+  --surface: #ffffff;
+  --surface-2: #eceef3;
+  --border: #d5d9e2;
+  --text: #191b21;
+  --text-dim: #5f6572;
+  --accent: #e5342b;
+  --good: #1f9d5b;
+  --bad: #e5342b;
+
+  color-scheme: light;
+}
+
+[data-game='nertz'] .game-header h1,
+[data-game='nertz'] .rule-section h2,
+[data-game='nertz'] .cheat-group h2 {
+  font-family: 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: italic;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+[data-game='nertz'] .game-header h1 {
+  color: var(--accent);
+}
+
+[data-game='nertz'] .game-header::after {
+  content: '';
+  display: block;
+  width: 88px;
+  height: 6px;
+  margin-top: 8px;
+  background: repeating-linear-gradient(
+    -60deg,
+    var(--accent) 0 12px,
+    transparent 12px 20px
+  );
+}
+
+[data-game='nertz'] .rule-section h2 {
+  font-size: 1rem;
+}
+
+[data-game='nertz'] .tabs {
+  background: var(--bg);
+}
+
+[data-game='nertz'] .tabs button {
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  color: var(--text);
+  font-weight: 600;
+}
+
+[data-game='nertz'] .tabs button.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  font-style: italic;
+  font-weight: 800;
+}
+
+[data-game='nertz'] .config-item,
+[data-game='nertz'] .cheat-entry {
+  border: 1px solid var(--border);
+  border-left-width: 4px;
+  box-shadow: 0 1px 3px rgba(25, 27, 33, 0.08);
+}
+
+[data-game='nertz'] .cheat-entry {
+  border-left-color: #a9b0bf;
+}
+
+[data-game='nertz'] .cheat-entry.tone-good {
+  border-left-color: var(--good);
+}
+
+[data-game='nertz'] .cheat-entry.tone-bad {
+  border-left-color: var(--bad);
+}
+
+[data-game='nertz'] .cheat-label {
+  font-weight: 700;
+}
+
+[data-game='nertz'] .player-picker-buttons button {
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  color: var(--text);
+}
+
+[data-game='nertz'] .player-picker-buttons button.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+[data-game='nertz'] .player-picker-label,
+[data-game='nertz'] .config-item dt {
+  color: var(--accent);
+  font-weight: 600;
+}
